@@ -27,7 +27,7 @@ app.use('/graphql', bodyParser.json(), graphqlExpress({
 app.get('/graphiql', graphiqlExpress({ endpointURL: '/graphql' })); // if you want GraphiQL enabled
 
 
-mongoose.connect('mongodb://localhost:27017/instagram-clone', {useMongoClient: true}).then(
+mongoose.connect('mongodb://localhost:27017/instagram-clone',{ useUnifiedTopology: true ,useNewUrlParser: true}).then(
   () => {
     console.log('Conectado a Mongo!!!!')
     app.listen(PORT, ()=>{
